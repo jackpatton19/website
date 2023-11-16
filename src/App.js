@@ -1,12 +1,17 @@
 import './App.css';
+import { useState, useRef } from "react";
+import { useContainerDimensions } from "./ContainerDimensions.js";
 import { Paper, Typography, Divider } from '@mui/material';
 import { Box } from '@mui/system';
 import Grid from '@mui/system/Unstable_Grid';
-import { createTheme, ThemeProvider, responsiveFontSizes } from '@mui/material/styles';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Navbar from "./components/Navbar.js";
+import sketch from "./components/sketch.js";
+import {ReactP5Wrapper} from 'react-p5-wrapper';
 
 const myTheme = createTheme({
     primary: {
-      main: "#1E1E1E",
+      main: "#181818",
     },
     secondary: {
       main: "#01BAEF",
@@ -30,6 +35,13 @@ const myTheme = createTheme({
 
 
 function App() {
+
+  const [currentPage, setCurrentPage] = useState("home");
+
+  const componentRef = useRef();
+  const { width, height } = useContainerDimensions(componentRef);
+  
+
   return (
     <ThemeProvider theme={myTheme}>
     <Paper
@@ -82,13 +94,13 @@ function App() {
                 </Typography>
                 <Divider sx={{backgroundColor:myTheme.secondary.main, marginRight: "5vw"}}></Divider>
               </Grid>
-              <Grid item xs={12} sx={{height: "60%"}}>
-
+              <Grid ref={componentRef} item xs={12} sx={{height: "60%"}}>
+                <Typography>{currentPage}</Typography>
               </Grid>
             </Grid>
           </Grid>
-          <Grid item xs={4} sx={{}}>
-            
+          <Grid item xs={4}>
+              <Navbar page={currentPage} pageChanger={setCurrentPage}></Navbar>
           </Grid>
         </Grid>
       </Box>
