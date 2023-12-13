@@ -6,8 +6,7 @@ import { Box } from '@mui/system';
 import Grid from '@mui/system/Unstable_Grid';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Navbar from "./components/Navbar.js";
-import sketch from "./components/sketch.js";
-import {ReactP5Wrapper} from 'react-p5-wrapper';
+import CurrentPage from "./components/CurrentPage.js";
 
 const myTheme = createTheme({
     primary: {
@@ -20,15 +19,18 @@ const myTheme = createTheme({
       fontFamily: 'sans-serif',
       h1: {
         '@media (max-width:800px)': {
-          fontSize: '5rem',
+          fontSize: '4rem',
         },
-        fontSize: '10vw',
+        fontSize: '8vw',
       },
       h2: {
         fontSize: '7vw',
       },
       h3: {
         fontSize: '3vw',
+      },
+      p: {
+        fontSize: '1.25vw',
       }
     }
 });
@@ -74,7 +76,8 @@ function App() {
             }}>
               <Grid item xs={12} 
               sx={{
-                height: "40%",
+                height: "35%",
+                marginBottom: 0
               }}>
                 <Typography variant="h1"
                 sx={{
@@ -95,7 +98,7 @@ function App() {
                 <Divider sx={{backgroundColor:myTheme.secondary.main, marginRight: "5vw"}}></Divider>
               </Grid>
               <Grid ref={componentRef} item xs={12} sx={{height: "60%"}}>
-                <Typography>{currentPage}</Typography>
+                <CurrentPage pageName={currentPage}></CurrentPage>
               </Grid>
             </Grid>
           </Grid>

@@ -9,8 +9,9 @@ function Navbar({page, pageChanger}) {
 
     const myTheme = useTheme();
 
-    const [isHome, setIsHome] = useState(false);
+    const [isHome, setIsHome] = useState(true);
     const [isProjects, setIsProjects] = useState(false);
+    const [isMore, setIsMore] = useState(false);
     const [isAbout, setIsAbout] = useState(false);
     const [isContact, setIsContact] = useState(false);
 
@@ -33,21 +34,31 @@ function Navbar({page, pageChanger}) {
         if(newPage === "home"){
             setIsHome(true);
             setIsProjects(false);
+            setIsMore(false);
             setIsAbout(false);
             setIsContact(false);
         }else if(newPage === "projects"){
             setIsHome(false);
             setIsProjects(true);
+            setIsMore(false);
+            setIsAbout(false);
+            setIsContact(false);
+        }else if(newPage === "more"){
+            setIsHome(false);
+            setIsProjects(false);
+            setIsMore(true);
             setIsAbout(false);
             setIsContact(false);
         }else if(newPage === "about"){
             setIsHome(false);
             setIsProjects(false);
+            setIsMore(false);
             setIsAbout(true);
             setIsContact(false);
         }else{
             setIsHome(false);
             setIsProjects(false);
+            setIsMore(false);
             setIsAbout(false);
             setIsContact(true);
         }
@@ -98,6 +109,20 @@ function Navbar({page, pageChanger}) {
                         </Box>
                     ) : (
                         <Typography variant="h3" align="right" onClick={() => {handlePage("projects")}} sx={{color: "white", transition: "font-size 0.3s ease-out", "&:hover": { fontSize: "3.5vw"}}}>Projects</Typography>
+                    )}
+                </Grid>
+                <Grid item sx={12}>
+                    {isMore ? (
+                        <Box display="flex" justifyContent="flex-end">
+                            <Paper sx={{
+                            width: "3vw",
+                            height: "3vw",
+                            borderRadius: "50%",
+                            backgroundColor: myTheme.secondary.main,
+                        }}></Paper>
+                        </Box>
+                    ) : (
+                        <Typography variant="h3" align="right" onClick={() => {handlePage("more")}} sx={{color: "white", transition: "font-size 0.3s ease-out", "&:hover": { fontSize: "3.5vw"}}}>More Work</Typography>
                     )}
                 </Grid>
                 <Grid item sx={12}>
