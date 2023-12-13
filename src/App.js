@@ -30,7 +30,7 @@ const myTheme = createTheme({
         fontSize: '3vw',
       },
       p: {
-        fontSize: '1.25vw',
+        fontSize: '1rem',
       }
     }
 });
@@ -41,7 +41,6 @@ function App() {
   const [currentPage, setCurrentPage] = useState("home");
 
   const componentRef = useRef();
-  const { width, height } = useContainerDimensions(componentRef);
   
 
   return (

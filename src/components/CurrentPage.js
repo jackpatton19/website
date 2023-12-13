@@ -7,8 +7,6 @@ import AboutMe from './AboutMe.js';
 
 function CurrentPage({pageName}) {
 
-    console.log("Page Name: ", {pageName});
-
     if({pageName}.pageName == "home"){
         return(
             <Typography variant="h1">Home</Typography>
