@@ -94,7 +94,7 @@ function Navbar({page, pageChanger}) {
                         }}></Paper>
                         </Box>
                     ) : (
-                        <Typography variant="h3" align="right" onClick={() => {handlePage("home")}} sx={{ color: "white", transition: "font-size 0.3s ease-out", "&:hover": { fontSize: "3.5vw"}}}>Home</Typography>
+                        <Typography variant="h2" align="right" onClick={() => {handlePage("home")}} sx={{ color: "white", transition: "font-size 0.3s ease-out", "&:hover": { fontSize: "3.5vw"}}}>Home</Typography>
                     )}
                 </Grid>
                 <Grid item sx={12}>
@@ -108,7 +108,7 @@ function Navbar({page, pageChanger}) {
                         }}></Paper>
                         </Box>
                     ) : (
-                        <Typography variant="h3" align="right" onClick={() => {handlePage("projects")}} sx={{color: "white", transition: "font-size 0.3s ease-out", "&:hover": { fontSize: "3.5vw"}}}>Projects</Typography>
+                        <Typography variant="h2" align="right" onClick={() => {handlePage("projects")}} sx={{color: "white", transition: "font-size 0.3s ease-out", "&:hover": { fontSize: "3.5vw"}}}>Projects</Typography>
                     )}
                 </Grid>
                 <Grid item sx={12}>
@@ -122,7 +122,7 @@ function Navbar({page, pageChanger}) {
                         }}></Paper>
                         </Box>
                     ) : (
-                        <Typography variant="h3" align="right" onClick={() => {handlePage("more")}} sx={{color: "white", transition: "font-size 0.3s ease-out", "&:hover": { fontSize: "3.5vw"}}}>More Work</Typography>
+                        <Typography variant="h2" align="right" onClick={() => {handlePage("more")}} sx={{color: "white", transition: "font-size 0.3s ease-out", "&:hover": { fontSize: "3.5vw"}}}>More Work</Typography>
                     )}
                 </Grid>
                 <Grid item sx={12}>
@@ -136,7 +136,7 @@ function Navbar({page, pageChanger}) {
                         }}></Paper>
                         </Box>
                     ) : (
-                        <Typography variant="h3" align="right" onClick={() => {handlePage("about")}} sx={{color: "white", transition: "font-size 0.3s ease-out", "&:hover": { fontSize: "3.5vw"}}}>About Me</Typography>
+                        <Typography variant="h2" align="right" onClick={() => {handlePage("about")}} sx={{color: "white", transition: "font-size 0.3s ease-out", "&:hover": { fontSize: "3.5vw"}}}>About Me</Typography>
                     )}
                 </Grid>
                 <Grid item sx={12}>
@@ -150,7 +150,7 @@ function Navbar({page, pageChanger}) {
                         }}></Paper>
                         </Box>
                     ) : (
-                        <Typography variant="h3" align="right" onClick={() => {handlePage("contact")}} sx={{color: "white", transition: "font-size 0.3s ease-out", "&:hover": { fontSize: "3.5vw"}}}>Contact</Typography>
+                        <Typography variant="h2" align="right" onClick={() => {handlePage("contact")}} sx={{color: "white", transition: "font-size 0.3s ease-out", "&:hover": { fontSize: "3.5vw"}}}>Contact</Typography>
                     )}
                 </Grid>
             </Grid>

@@ -1,9 +1,11 @@
 import { React, useState, useEffect } from 'react';
 import { Box, useTheme} from '@mui/system';
 import Button from '@mui/material/Button';
-import { NoEncryption } from '@mui/icons-material';
+import { ThemeContext } from '@emotion/react';
 
 function AboutNavbar({pageChanger, mainPage, mainPageChanger}) {
+
+    const myTheme = useTheme();
 
     const handlePage = (newPage) => {
         pageChanger(newPage);
@@ -21,19 +23,34 @@ function AboutNavbar({pageChanger, mainPage, mainPageChanger}) {
             border: 0
         }}>
             <Button variant="outlined" sx={{
-                width: "60%",
+                width: "30%",
                 height: "20%",
-                borderRadius: "10px",
+                borderRadius: "20px",
+                "&:hover": {
+                  width: "60%",
+                  borderRadius: "10px"
+                },
+                transition: "border-radius 0.5s ease-out, width 0.5s ease-in-out"
             }} onClick={() => {handlePage("education")}}>Education</Button>
             <Button variant="outlined" sx={{
-                width: "60%",
+                width: "30%",
                 height: "20%",
-                borderRadius: "10px",
+                borderRadius: "20px",
+                "&:hover": {
+                  width: "60%",
+                  borderRadius: "10px"
+                },
+                transition: "border-radius 0.5s ease-out, width 0.5s ease-in-out"
             }} onClick={() => {handlePage("experience")}}>Experience</Button>
             <Button variant="outlined" sx={{
-                width: "60%",
+                width: "30%",
                 height: "20%",
-                borderRadius: "10px",
+                borderRadius: "20px",
+                "&:hover": {
+                  width: "60%",
+                  borderRadius: "10px"
+                },
+                transition: "border-radius 0.5s ease-out, width 0.5s ease-in-out"
             }} onClick={() => {handlePage("skills")}}>Skills</Button>
 
         </Box>
