@@ -20,7 +20,6 @@ function AboutNavbar({pageChanger, mainPage, mainPageChanger}) {
             alignItems: "center",
             width: "90%",
             height: "100%",
-            border: 0
         }}>
             <Button variant="outlined" sx={{
                 width: "30%",
