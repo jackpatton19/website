@@ -4,16 +4,18 @@ import { Box, useTheme} from '@mui/system';
 import Grid from '@mui/system/Unstable_Grid';
 import Paper from '@mui/material/Paper';
 import AboutMe from './AboutMe.js';
+import HomePage from './HomePage.js';
+import ProjectsPage from './ProjectsPage.js';
 
 function CurrentPage({pageName}) {
 
     if({pageName}.pageName == "home"){
         return(
-            <Typography variant="h1">Home</Typography>
+            <HomePage></HomePage>
         )
     }else if({pageName}.pageName == "projects"){
         return(
-            <Typography variant="h1">My Projects</Typography>
+            <ProjectsPage></ProjectsPage>
         )
     }else if({pageName}.pageName == "more"){
         return(

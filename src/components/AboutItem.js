@@ -18,6 +18,8 @@ import CircleIcon from '@mui/icons-material/Circle';
 
 function AboutItem({page, pageChanger, mainPageChanger}) {
 
+    const myTheme = useTheme();
+
     const [languagesOpen, setLanguagesOpen] = useState(false);
     const [frameworksOpen, setFrameworksOpen] = useState(false);
     const [skillsOpen, setSkillsOpen] = useState(false);
@@ -60,7 +62,7 @@ function AboutItem({page, pageChanger, mainPageChanger}) {
     const languagesItems = languages.map((language) =>
         <ListItemButton sx={{ pl: 4 }}>
             <ListItemIcon>
-            <CircleIcon />
+            <CircleIcon sx={{color: "white"}}/>
             </ListItemIcon>
             <ListItemText primary={language} />
         </ListItemButton>
@@ -70,7 +72,7 @@ function AboutItem({page, pageChanger, mainPageChanger}) {
     const frameworkItems = frameworks.map((language) =>
         <ListItemButton sx={{ pl: 4 }}>
             <ListItemIcon>
-            <CircleIcon />
+            <CircleIcon sx={{color: "white"}}/>
             </ListItemIcon>
             <ListItemText primary={language} />
         </ListItemButton>
@@ -80,7 +82,7 @@ function AboutItem({page, pageChanger, mainPageChanger}) {
     const skillsItems = otherSkills.map((language) =>
         <ListItemButton sx={{ pl: 4 }}>
             <ListItemIcon>
-            <CircleIcon />
+            <CircleIcon sx={{color: "white"}}/>
             </ListItemIcon>
             <ListItemText primary={language} />
         </ListItemButton>
@@ -112,22 +114,22 @@ function AboutItem({page, pageChanger, mainPageChanger}) {
         return(
             <Box sx={{
                 display: "flex",
-                flexDirection: "column"
+                flexDirection: "column",
+                maxHeight: "100%",
+                overflow: "auto",
             }}>
                 <Box sx={{
                     width: "100%",
-                    height: "10%"
+                    height: "10%",
+                    display: "flex",
+                    flexDirection: "row",
+                    justifyContent: "flex-start"
                 }}>
                     <IconButton aria-label="delete" size="large">
                         <ArrowBackIosIcon fontSize="inherit" sx={{color: "white"}} onClick={() => {handlePage("main")}}/>
                     </IconButton>
+                    <Typography variant="h3" color="white" sx={{width: "80%", textAlign: "center"}}>My Experience</Typography>
                 </Box>
-                <Typography variant="h1" sx={{
-                    color: "white",
-                    alignSelf: "center"
-                }}>
-                    Experience
-                </Typography>
             </Box>
         );
     }else{
@@ -148,10 +150,10 @@ function AboutItem({page, pageChanger, mainPageChanger}) {
                     <IconButton aria-label="delete" size="large">
                         <ArrowBackIosIcon fontSize="inherit" sx={{color: "white"}} onClick={() => {handlePage("main")}}/>
                     </IconButton>
-                    <Typography variant="h3" color="white" sx={{marginLeft: "10%"}}>My Experience</Typography>
+                    <Typography variant="h3" color="white" sx={{width: "80%", textAlign: "center"}}>My Skills</Typography>
                 </Box>
                     <List
-                    sx={{ width: '100%', maxWidth: 360, bgcolor: 'white', borderRadius: "10px"}}
+                    sx={{ width: '100%', bgcolor: myTheme.secondary.main, borderRadius: "10px"}}
                     component="nav"
                     aria-labelledby="nested-list-subheader"
                     >
@@ -162,8 +164,8 @@ function AboutItem({page, pageChanger, mainPageChanger}) {
                             <ListItemText primary="Languages" />
                             {languagesOpen ? <ExpandLess /> : <ExpandMore />}
                         </ListItemButton>
-                        <Collapse in={languagesOpen} timeout="auto" unmountOnExit>
-                            <List component="div" disablePadding>
+                        <Collapse in={languagesOpen} timeout="auto" unmountOnExit sx={{bgcolor: myTheme.primary.main}}>
+                            <List component="div" disablePadding sx={{color: "white"}}>
                                 {languagesItems}
                             </List>
                         </Collapse>
@@ -175,8 +177,8 @@ function AboutItem({page, pageChanger, mainPageChanger}) {
                             <ListItemText primary="Frameworks / Technology" />
                             {frameworksOpen ? <ExpandLess /> : <ExpandMore />}
                         </ListItemButton>
-                        <Collapse in={frameworksOpen} timeout="auto" unmountOnExit>
-                            <List component="div" disablePadding>
+                        <Collapse in={frameworksOpen} timeout="auto" unmountOnExit sx={{bgcolor: myTheme.primary.main}}>
+                            <List component="div" disablePadding sx={{color: "white"}}>
                                 {frameworkItems}
                             </List>
                         </Collapse>
@@ -188,8 +190,8 @@ function AboutItem({page, pageChanger, mainPageChanger}) {
                             <ListItemText primary="Other Skills" />
                             {skillsOpen ? <ExpandLess /> : <ExpandMore />}
                         </ListItemButton>
-                        <Collapse in={skillsOpen} timeout="auto" unmountOnExit>
-                            <List component="div" disablePadding>
+                        <Collapse in={skillsOpen} timeout="auto" unmountOnExit sx={{bgcolor: myTheme.primary.main}}>
+                            <List component="div" disablePadding sx={{color: "white"}}>
                                 {skillsItems}
                             </List>
                         </Collapse>
