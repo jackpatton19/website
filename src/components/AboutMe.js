@@ -31,9 +31,9 @@ function AboutMe() {
             alignItems: "right",
             height: "100%", 
         }} xs={12} md={6}>
-        <Avatar alt="Jack Patton" src={avatarIcon} sx={{alignSelf: "center", height: "12rem", width: "12rem"}}/>
+        <Avatar alt="Jack Patton" src={avatarIcon} sx={{alignSelf: "center", height: "14rem", width: "14rem"}}/>
         <Typography color="white" variant="p"
-            sx={{textAlign: "center", padding: "10px"}}>
+            sx={{textAlign: "center", marginLeft: "60px", marginRight: "60px"}}>
                 Hello! My name is Jack Patton, and I am a senior computer science student at Michigan State University.
                 I am currently looking to enter the industry and expand my skillset in both development and leadership
         </Typography>

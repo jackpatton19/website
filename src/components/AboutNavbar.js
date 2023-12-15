@@ -22,34 +22,31 @@ function AboutNavbar({pageChanger, mainPage, mainPageChanger}) {
             height: "100%",
         }}>
             <Button variant="outlined" sx={{
-                width: "30%",
+                width: "60%",
                 height: "20%",
                 borderRadius: "20px",
                 "&:hover": {
-                  width: "60%",
                   borderRadius: "10px"
                 },
-                transition: "border-radius 0.5s ease-out, width 0.5s ease-in-out"
+                transition: "border-radius 0.5s ease-out"
             }} onClick={() => {handlePage("education")}}>Education</Button>
             <Button variant="outlined" sx={{
-                width: "30%",
+                width: "60%",
                 height: "20%",
                 borderRadius: "20px",
                 "&:hover": {
-                  width: "60%",
                   borderRadius: "10px"
                 },
-                transition: "border-radius 0.5s ease-out, width 0.5s ease-in-out"
+                transition: "border-radius 0.5s ease-out"
             }} onClick={() => {handlePage("experience")}}>Experience</Button>
             <Button variant="outlined" sx={{
-                width: "30%",
+                width: "60%",
                 height: "20%",
                 borderRadius: "20px",
                 "&:hover": {
-                  width: "60%",
                   borderRadius: "10px"
                 },
-                transition: "border-radius 0.5s ease-out, width 0.5s ease-in-out"
+                transition: "border-radius 0.5s ease-out"
             }} onClick={() => {handlePage("skills")}}>Skills</Button>
 
         </Box>
