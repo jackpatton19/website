@@ -20,12 +20,12 @@ function ProjectCardDesktop({
 
     const myLanguages = projectLanguages.map((language) => {
         return(
-            <li>{language}</li>
+            <li style={{color: "white"}}>{language}</li>
         );
     });
 
     return(
-        <Box color={myTheme.secondary.main} sx={{
+        <Box color={myTheme.primary.main} sx={{
             width: "96%",
             height: "85%",
             display: "flex",

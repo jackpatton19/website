@@ -8,6 +8,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Navbar from "../components/Navbar.js";
 import CurrentPage from "../components/CurrentPage.js";
 import HelveticaThin from "../fonts/Helvetica-Thin.ttf";
+import bgImage from '../images/background_1.jpg';
 
 function Home() {
     const [currentPage, setCurrentPage] = useState("home");
@@ -20,7 +21,7 @@ function Home() {
         <Paper
         sx={{
         display: "flex",
-        backgroundColor: myTheme.primary.main,
+        backgroundImage: `url(${bgImage})`,
         width: "100vw",
         height: "100vh",
         justifyContent: "center",
@@ -29,8 +30,6 @@ function Home() {
         }}>
             <Box 
             sx={{
-                border: 1,
-                borderColor: myTheme.secondary.main,
                 width: "97vw",
                 height: "97vh",
                 overflow: "auto",
