@@ -6,6 +6,7 @@ import Paper from '@mui/material/Paper';
 import AboutMe from './AboutMe.js';
 import HomePage from './HomePage.js';
 import ProjectsPage from './ProjectsPage.js';
+import ContactPage from './ContactPage.js';
 
 function CurrentPage({pageName}) {
 
@@ -27,7 +28,7 @@ function CurrentPage({pageName}) {
         )
     }else{
         return(
-            <Typography variant="h1">Contact Me</Typography>
+            <ContactPage></ContactPage>
         )
    }
 

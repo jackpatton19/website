@@ -2,7 +2,6 @@ import { React, useState, useEffect } from 'react';
 import { Box, useTheme} from '@mui/system';
 import { Grid } from '@mui/material';
 import ProjectCardDesktop from "./ProjectCardDesktop"
-import ProjectCardMobile from "./ProjectCardMobile"
 
 function ProjectsPage() {
 
@@ -55,51 +54,33 @@ function ProjectsPage() {
             justifyContent: "center",
             alignItems: "flex-start",
         }}>
-                {isMobile ? (
-                    <Grid container spacing={3} sx={{
-                        width: "90%",
-                        height: "80%",
-                        marginLeft: "2%",
-                    }}>
-                        <Grid item xs={12} sm={12} md={12} >
-                            <ProjectCardMobile></ProjectCardMobile>
-                        </Grid>
-                        <Grid item xs={12} sm={12} md={12}>
-                            <ProjectCardMobile></ProjectCardMobile>
-                        </Grid>
-                        <Grid item xs={12} sm={12} md={12}>
-                            <ProjectCardMobile></ProjectCardMobile>
-                        </Grid>
-                    </Grid>
-                ): (
-                    <Grid container spacing={3} sx={{
-                        width: "90%",
-                        height: "80%",
-                        marginLeft: "2%",
-                    }}>
-                        <Grid item xs={12} sm={12} md={12} >
-                            <ProjectCardDesktop 
-                                projectName={projects[0].name}
-                                projectDescription={projects[0].description}
-                                projectLanguages={projects[0].languages}>
-                            </ProjectCardDesktop>
-                        </Grid>
-                        <Grid item xs={12} sm={12} md={12}>
-                        <ProjectCardDesktop 
-                                projectName={projects[1].name}
-                                projectDescription={projects[1].description}
-                                projectLanguages={projects[1].languages}>
-                            </ProjectCardDesktop>
-                        </Grid>
-                        <Grid item xs={12} sm={12} md={12}>
-                        <ProjectCardDesktop 
-                                projectName={projects[2].name}
-                                projectDescription={projects[2].description}
-                                projectLanguages={projects[2].languages}>
-                            </ProjectCardDesktop>
-                        </Grid>
-                    </Grid>
-                )}
+            <Grid container spacing={3} sx={{
+                width: "90%",
+                height: "80%",
+                marginLeft: "2%",
+            }}>
+                <Grid item xs={12} sm={12} md={12} >
+                    <ProjectCardDesktop 
+                        projectName={projects[0].name}
+                        projectDescription={projects[0].description}
+                        projectLanguages={projects[0].languages}>
+                    </ProjectCardDesktop>
+                </Grid>
+                <Grid item xs={12} sm={12} md={12}>
+                <ProjectCardDesktop 
+                        projectName={projects[1].name}
+                        projectDescription={projects[1].description}
+                        projectLanguages={projects[1].languages}>
+                    </ProjectCardDesktop>
+                </Grid>
+                <Grid item xs={12} sm={12} md={12}>
+                <ProjectCardDesktop 
+                        projectName={projects[2].name}
+                        projectDescription={projects[2].description}
+                        projectLanguages={projects[2].languages}>
+                    </ProjectCardDesktop>
+                </Grid>
+            </Grid>
         </Box>
     );
 
