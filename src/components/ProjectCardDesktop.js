@@ -4,6 +4,7 @@ import { React, useState, useEffect } from 'react';
 import { Typography } from '@mui/material';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import IconButton from '@mui/material/IconButton';
+import { useNavigate } from "react-router-dom";
 
 function ProjectCardDesktop({
     projectName,
@@ -13,8 +14,14 @@ function ProjectCardDesktop({
 }) {
 
     const myTheme = useTheme();
+    const navigate = useNavigate();
 
     const handlePage = (path) => {
+        if(path.includes("http")){
+            window.open(path, "_blank", "noreferrer");
+        }else{
+            navigate("/" + path);
+        }
 
     }
 
@@ -25,16 +32,16 @@ function ProjectCardDesktop({
     });
 
     return(
-        <Box color={myTheme.primary.main} sx={{
+        <Box color={myTheme.primary.main} onClick={() => {handlePage(nextPageLink)}} sx={{
             width: "96%",
-            height: "85%",
+            height: "50%",
             display: "flex",
             flexDirection: "row",
             borderTop: 1,
             borderLeft: 1,
             "&:hover": {
                 width: "110%",
-                height: "95%"
+                height: "55%"
             },
             transition: "width 0.5s ease-in-out, height 0.5s ease-in-out"
         }}>
@@ -59,7 +66,7 @@ function ProjectCardDesktop({
                     {myLanguages}
                 </ul>
                 <IconButton aria-label="delete" size="large">
-                    <ArrowForwardIosIcon fontSize="inherit" sx={{color: "white"}} onClick={() => {handlePage("main")}}/>
+                    <ArrowForwardIosIcon fontSize="inherit" sx={{color: myTheme.secondary.main}}/>
                 </IconButton>
             </Box>
         </Box>

@@ -7,6 +7,7 @@ import AboutMe from './AboutMe.js';
 import HomePage from './HomePage.js';
 import ProjectsPage from './ProjectsPage.js';
 import ContactPage from './ContactPage.js';
+import MoreWorkPage from './MoreWorkPage.js';
 
 function CurrentPage({pageName}) {
 
@@ -20,7 +21,7 @@ function CurrentPage({pageName}) {
         )
     }else if({pageName}.pageName == "more"){
         return(
-            <Typography variant="h1">More Work</Typography>
+            <MoreWorkPage></MoreWorkPage>
         )
     }else if({pageName}.pageName == "about"){
         return(

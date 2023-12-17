@@ -21,7 +21,7 @@ function AboutNavbar({pageChanger, mainPage, mainPageChanger}) {
             width: "90%",
             height: "100%",
         }}>
-            <Button variant="outlined" sx={{
+            <Button variant="outlined" color="primary" sx={{
                 width: "60%",
                 height: "20%",
                 borderRadius: "20px",

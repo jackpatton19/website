@@ -16,17 +16,17 @@ function ProjectsPage() {
             name: "Money Moves",
             description: "Full Stack Financial Education Platform",
             languages: ["React.JS", "Node.JS", "AWS EC2 / S3", "MySQL"],
-            link: "/moneymoves"},
+            link: "moneymoves"},
         {
             name: "Second Project",
             description: "Second project decsription will go here",
             languages: ["Language 1", "Language 2", "Language 3", "Language 4"],
-            link: "/temp"},
+            link: "temp"},
         {
             name: "Third Project",
             description: "Third project description will go here",
             languages: ["Language 1", "Language 2", "Language 3", "Language 4"],
-            link: "/temp"},
+            link: "temp"},
     ]
 
     useEffect(() => {
@@ -63,21 +63,24 @@ function ProjectsPage() {
                     <ProjectCardDesktop 
                         projectName={projects[0].name}
                         projectDescription={projects[0].description}
-                        projectLanguages={projects[0].languages}>
+                        projectLanguages={projects[0].languages}
+                        nextPageLink={projects[0].link}>
                     </ProjectCardDesktop>
                 </Grid>
                 <Grid item xs={12} sm={12} md={12}>
                 <ProjectCardDesktop 
                         projectName={projects[1].name}
                         projectDescription={projects[1].description}
-                        projectLanguages={projects[1].languages}>
+                        projectLanguages={projects[1].languages}
+                        nextPageLink={projects[1].link}>
                     </ProjectCardDesktop>
                 </Grid>
                 <Grid item xs={12} sm={12} md={12}>
                 <ProjectCardDesktop 
                         projectName={projects[2].name}
                         projectDescription={projects[2].description}
-                        projectLanguages={projects[2].languages}>
+                        projectLanguages={projects[2].languages}
+                        nextPageLink={projects[2].link}>
                     </ProjectCardDesktop>
                 </Grid>
             </Grid>

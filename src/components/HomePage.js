@@ -1,5 +1,6 @@
 import { React, useState, useEffect } from 'react';
 import { Box, useTheme} from '@mui/system';
+import sillyCat from '../images/sillycat.png';
 
 function HomePage() {
 
@@ -9,7 +10,8 @@ function HomePage() {
         <Box color={myTheme.secondary.main} sx={{
             width: "100%",
             height: "100%",
-            border: 1,
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: 'center',
         }}>
 
         </Box>
